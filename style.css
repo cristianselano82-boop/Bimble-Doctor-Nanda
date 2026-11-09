@@ -1,0 +1,928 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f8fc;
+    color: #263238;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: #123b70;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+/* NAVIGASI */
+nav {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+nav a {
+    text-decoration: none;
+    color: #123b70;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+/* BERANDA */
+.hero {
+    background: linear-gradient(135deg, #123b70, #2866a5);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* TOMBOL */
+.btn {
+    display: inline-block;
+    background: #d4af37;
+    color: #123b70;
+    padding: 13px 25px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* BAGIAN UMUM */
+section {
+    padding: 65px 8%;
+}
+
+.section-title {
+    text-align: center;
+    color: #123b70;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+/* TENTANG KAMI */
+.about {
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+}
+
+.about p {
+    margin-bottom: 15px;
+}
+
+/* PROGRAM */
+.program-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.program-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 12px #ddd;
+}
+
+.program-card h3 {
+    color: #123b70;
+    margin-bottom: 10px;
+}
+
+/* KEUNGGULAN */
+.features {
+    background: #eaf1f8;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.feature-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.feature-card h3 {
+    color: #123b70;
+    margin-bottom: 10px;
+}
+
+/* GALERI */
+.gallery-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.gallery-list img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* LOKASI DAN KONTAK */
+#kontak {
+    background: #eaf1f8;
+}
+
+.lokasi-kontak {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.peta-box,
+.kontak-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #ddd;
+}
+
+.peta-box h3,
+.kontak-box h3 {
+    color: #123b70;
+    margin-bottom: 15px;
+}
+
+.peta-box img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin: 15px 0;
+}
+
+.kontak-box p {
+    margin: 18px 0 5px;
+    font-weight: bold;
+}
+
+.kontak-box a {
+    color: #123b70;
+    text-decoration: none;
+}
+
+.kontak-box a:hover {
+    color: #d4af37;
+}
+
+/* FOOTER */
+footer {
+    background: #0b294e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* WHATSAPP MENGAMBANG */
+
+/* TAMPILAN HP */
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 23px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px;
+        font-size: 13px;
+    }
+
+    .hero h2 {
+        font-size: 29px;
+    }
+
+    section {
+        padding: 45px 6%;
+    }
+
+    .lokasi-kontak {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ANIMASI SCROLL */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* NAVBAR AKTIF */
+nav a.active {
+    color: #d4af37;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 5px;
+}
+
+/* ANIMASI KARTU */
+.program-card,
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card.card-hover,
+.feature-card.card-hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(18, 59, 112, 0.16);
+}
+
+/* LIGHTBOX */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 18, 40, 0.92);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.lightbox.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.lightbox-caption {
+    color: white;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+/* TOMBOL KEMBALI KE ATAS */
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #123b70;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 500;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #d4af37;
+    color: #123b70;
+}
+
+/* HP */
+@media (max-width: 600px) {
+    .lightbox img {
+        max-width: 100%;
+        max-height: 75vh;
+    }
+
+    .back-to-top {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+/* Aksesibilitas: kurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .program-card,
+    .feature-card,
+    .lightbox,
+    .back-to-top {
+        transition: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* ==================================
+   RESPONSIVE ALL DEVICES
+================================== */
+
+/* RESET DASAR */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* NAVBAR DESKTOP */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    padding: 14px 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #123b70;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 0;
+}
+
+.nav-links a.active {
+    color: #d4af37;
+}
+
+/* TOMBOL HAMBURGER */
+.menu-toggle {
+    display: none;
+    background: #123b70;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 44px;
+    height: 42px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    margin: 5px auto;
+    transition: 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* HERO */
+.hero {
+    padding: clamp(55px, 9vw, 110px) 20px;
+}
+
+.hero h2 {
+    font-size: clamp(27px, 5vw, 42px);
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: clamp(15px, 2vw, 18px);
+}
+
+/* SECTION */
+section {
+    padding: clamp(40px, 7vw, 70px) clamp(16px, 6vw, 8%);
+}
+
+.section-title {
+    font-size: clamp(23px, 4vw, 32px);
+}
+
+/* PROGRAM DAN KEUNGGULAN */
+.program-list,
+.feature-list {
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 220px), 1fr)
+    );
+}
+
+/* GALERI */
+.gallery-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.gallery-list img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* KONTAK */
+.lokasi-kontak {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.peta-box,
+.kontak-box {
+    min-width: 0;
+}
+
+.peta-box iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* TABLET DAN IPAD */
+@media (max-width: 900px) {
+
+    .gallery-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lokasi-kontak {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: clamp(23px, 4vw, 30px);
+    }
+
+}
+
+/* HP DAN IPHONE */
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 10px 15px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 12px 18px 20px;
+        box-shadow: 0 8px 12px rgba(0,0,0,0.10);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px 8px;
+        border-bottom: 1px solid #edf0f5;
+        font-size: 15px;
+    }
+
+    header {
+        padding: 22px 12px;
+    }
+
+    header h1 {
+        font-size: clamp(20px, 6vw, 25px);
+    }
+
+    .hero {
+        padding: 65px 18px;
+    }
+
+    .hero h2 {
+        font-size: clamp(26px, 7vw, 34px);
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .btn {
+        max-width: 100%;
+        padding: 12px 18px;
+    }
+
+    .program-list,
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .gallery-list img {
+        border-radius: 10px;
+    }
+
+    .lokasi-kontak {
+        grid-template-columns: 1fr;
+    }
+
+    .peta-box,
+    .kontak-box {
+        padding: 18px;
+    }
+
+    .peta-box iframe {
+        height: 300px;
+    }
+
+    footer {
+        font-size: 13px;
+    }
+
+}
+
+/* HP KECIL */
+@media (max-width: 380px) {
+
+    .gallery-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .section-title {
+        font-size: 23px;
+    }
+
+    nav.navbar {
+        padding: 9px 12px;
+    }
+
+}
+
+/* IPHONE DENGAN SAFE AREA */
+@supports (padding: env(safe-area-inset-bottom)) {
+    footer {
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+
+    .back-to-top {
+        bottom: calc(15px + env(safe-area-inset-bottom));
+    }
+}
+
+/* PENGATURAN ANIMASI */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+
+/* ==================================
+   CONTACT SECTION PREMIUM
+================================== */
+
+.kontak-box {
+    background: linear-gradient(145deg, #ffffff, #edf4ff);
+    padding: 30px;
+    border-radius: 22px;
+    border: 1px solid #e1eaf5;
+    box-shadow: 0 12px 35px rgba(18, 59, 112, 0.10);
+}
+
+.kontak-heading {
+    margin-bottom: 25px;
+}
+
+.kontak-label {
+    display: inline-block;
+    background: #e0ecff;
+    color: #2866a5;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.kontak-heading h3 {
+    font-size: 27px;
+    color: #123b70;
+    margin: 12px 0 5px;
+}
+
+.kontak-heading p {
+    color: #64748b;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* CONTACT CARD */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    margin-bottom: 13px;
+    border-radius: 15px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.09);
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-info small {
+    font-size: 12px;
+    opacity: 0.75;
+}
+
+.contact-info strong {
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.contact-info span {
+    font-size: 11px;
+    opacity: 0.75;
+}
+
+.contact-arrow {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    background: #e9fff2;
+    color: #087b43;
+    border-color: #c9f4dc;
+}
+
+.whatsapp .contact-icon {
+    background: #25d366;
+    color: white;
+}
+
+/* INSTAGRAM */
+.instagram {
+    background: #fff0f6;
+    color: #b72b70;
+    border-color: #f9d5e7;
+}
+
+.instagram .contact-icon {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+}
+
+/* YOUTUBE */
+.youtube {
+    background: #fff0f0;
+    color: #c62828;
+    border-color: #ffdada;
+}
+
+.youtube .contact-icon {
+    background: #ff0000;
+    color: white;
+}
+
+/* ALAMAT */
+.address-card {
+    display: flex;
+    gap: 13px;
+    padding: 18px;
+    background: #eaf2ff;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.address-icon {
+    font-size: 25px;
+}
+
+.address-card strong {
+    color: #123b70;
+}
+
+.address-card p {
+    font-size: 13px;
+    color: #52647a;
+    line-height: 1.7;
+    margin: 5px 0 0;
+}
+
+/* PENDAFTARAN */
+.registration-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: linear-gradient(135deg, #123b70, #2866a5);
+    color: white !important;
+    text-decoration: none;
+    padding: 17px 20px;
+    margin-top: 18px;
+    border-radius: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.registration-btn:hover {
+    background: linear-gradient(135deg, #d4af37, #f2c94c);
+    color: #123b70 !important;
+    transform: translateY(-3px);
+}
+
+.registration-btn span {
+    font-size: 23px;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 600px) {
+
+    .kontak-box {
+        padding: 20px 15px;
+        border-radius: 17px;
+    }
+
+    .kontak-heading h3 {
+        font-size: 23px;
+    }
+
+    .contact-item {
+        padding: 13px 10px;
+        gap: 10px;
+    }
+
+    .contact-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 21px;
+    }
+
+    .contact-info strong {
+        font-size: 13px;
+    }
+
+    .contact-info span {
+        font-size: 10px;
+    }
+
+}
+
+/* Animasi timbul tombol Google Maps */
+.peta-box a {
+    display: inline-block;
+    padding: 13px 22px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
+    color: white !important;
+
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+
+    box-shadow: 0 5px 0 #0d47a1,
+                0 8px 15px rgba(0, 0, 0, 0.2);
+
+    transform: translateY(0);
+    transition: all 0.25s ease;
+}
+
+/* Saat kursor diarahkan */
+.peta-box a:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 9px 0 #0d47a1,
+                0 14px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Saat tombol diklik */
+.peta-box a:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #0d47a1,
+                0 4px 8px rgba(0, 0, 0, 0.2);
+}
